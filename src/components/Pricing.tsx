@@ -13,7 +13,7 @@ export default function Pricing() {
       <div className="mx-auto mt-10 grid max-w-3xl grid-cols-1 gap-5 sm:grid-cols-2">
         {pricing.map((p, i) => (
           <Reveal key={p.name} delay={i * 0.1}>
-            <Parallax axis="y" distance={i % 2 === 0 ? -20 : 20}>
+            <Parallax axis="y" distance={i % 2 === 0 ? -60 : 60}>
               <div
                 className={`relative flex h-full flex-col rounded-3xl border p-7 ${
                   p.popular

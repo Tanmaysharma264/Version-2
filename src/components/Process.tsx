@@ -13,11 +13,13 @@ export default function Process() {
       <div className="mx-auto mt-10 grid max-w-4xl grid-cols-1 gap-5 sm:grid-cols-2">
         {process.map((s, i) => (
           <Reveal key={s.step} delay={i * 0.08}>
-            <Parallax axis="y" distance={i % 2 === 0 ? -18 : 18}>
-              <div className="rounded-3xl border border-line bg-white/60 p-6">
-                <span className="flex h-10 w-10 items-center justify-center rounded-full bg-coral text-sm font-semibold text-white">
-                  {s.step.replace("0", "")}
-                </span>
+            <Parallax axis="y" distance={i % 2 === 0 ? -50 : 50}>
+              <div className="overflow-hidden rounded-3xl border border-line bg-white/60 p-6">
+                <Parallax axis="x" distance={i % 2 === 0 ? 20 : -20}>
+                  <span className="flex h-10 w-10 items-center justify-center rounded-full bg-coral text-sm font-semibold text-white">
+                    {s.step.replace("0", "")}
+                  </span>
+                </Parallax>
                 <h3 className="font-display mt-4 text-xl text-ink">{s.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-ink-soft">{s.description}</p>
               </div>

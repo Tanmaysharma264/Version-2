@@ -21,7 +21,7 @@ export default function About() {
 
       <div className="mx-auto mt-10 grid max-w-4xl grid-cols-1 items-center gap-10 md:grid-cols-2">
         <Reveal>
-          <Parallax axis="y" distance={-24}>
+          <Parallax axis="y" distance={-65}>
             <div>
               <h3 className="font-display text-3xl text-ink">
                 Hey, I am <span className="text-coral">Mira</span>
@@ -51,7 +51,7 @@ export default function About() {
         </Reveal>
 
         <Reveal delay={0.15}>
-          <Parallax axis="y" distance={24}>
+          <Parallax axis="y" distance={65}>
             <div
               ref={imgWrapRef}
               className="h-[380px] overflow-hidden rounded-[28px] shadow-[0_25px_50px_-15px_rgba(23,20,15,0.3)]"

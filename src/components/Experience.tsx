@@ -15,7 +15,7 @@ export default function Experience() {
           <Reveal key={e.role} delay={i * 0.08}>
             <div className="relative flex items-start gap-5 border-l border-line pb-10 pl-8 last:pb-0">
               <span className="absolute -left-[7px] top-1 h-3.5 w-3.5 rounded-full border-2 border-cream bg-coral" />
-              <Parallax axis="x" distance={i % 2 === 0 ? -14 : 14}>
+              <Parallax axis="x" distance={i % 2 === 0 ? -45 : 45}>
                 <div>
                   <p className="text-xs font-medium uppercase tracking-wide text-ink-soft">
                     {e.period}

@@ -73,7 +73,7 @@ export default function Projects() {
       <div className="mx-auto mt-10 grid max-w-4xl grid-cols-1 gap-5 sm:grid-cols-2">
         {projects.map((p, i) => (
           <Reveal key={p.title} delay={i * 0.08}>
-            <Parallax axis="y" distance={i % 2 === 0 ? -22 : 22}>
+            <Parallax axis="y" distance={i % 2 === 0 ? -70 : 70}>
               <ProjectCard p={p} />
             </Parallax>
           </Reveal>

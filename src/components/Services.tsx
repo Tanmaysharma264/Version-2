@@ -19,7 +19,7 @@ export default function Services() {
           const isOpen = open === i;
           return (
             <Reveal key={s.title} delay={i * 0.05}>
-              <Parallax axis="x" distance={i % 2 === 0 ? -18 : 18}>
+              <Parallax axis="x" distance={i % 2 === 0 ? -55 : 55}>
                 <div
                   onClick={() => setOpen(isOpen ? -1 : i)}
                   className={`cursor-pointer rounded-2xl border px-6 py-5 transition-colors ${

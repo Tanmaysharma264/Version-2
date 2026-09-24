@@ -17,7 +17,7 @@ export default function Testimonials() {
             delay={i * 0.06}
             className={i === 0 ? "sm:col-span-2 lg:col-span-1 lg:row-span-2" : undefined}
           >
-            <Parallax axis="y" distance={i % 2 === 0 ? -16 : 16}>
+            <Parallax axis="y" distance={i % 2 === 0 ? -50 : 50}>
               <div
                 className={`flex h-full flex-col justify-between rounded-3xl border border-line p-6 ${
                   i === 0 ? "bg-ink text-cream" : "bg-white/70 text-ink"
