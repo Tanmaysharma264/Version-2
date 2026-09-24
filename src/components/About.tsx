@@ -1,7 +1,16 @@
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
 import { skillCards } from "../data/content";
 import Reveal from "./Reveal";
 
 export default function About() {
+  const imgWrapRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: imgWrapRef,
+    offset: ["start end", "end start"],
+  });
+  const imageY = useTransform(scrollYProgress, [0, 1], ["-8%", "8%"]);
+
   return (
     <section id="about" className="px-6 py-20">
       <Reveal className="text-center">
@@ -20,20 +29,30 @@ export default function About() {
               drive engagement and enhance usability.
             </p>
             <div className="mt-6 grid grid-cols-2 gap-3">
-              {skillCards.map((s) => (
-                <div
+              {skillCards.map((s, i) => (
+                <motion.div
                   key={s.label}
+                  initial={{ opacity: 0, y: 14 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-60px" }}
+                  transition={{ duration: 0.5, delay: i * 0.08, ease: [0.22, 1, 0.36, 1] }}
+                  whileHover={{ y: -3, borderColor: "var(--color-coral)" }}
                   className="rounded-2xl border border-line bg-white/70 px-4 py-3 text-sm font-medium text-ink"
                 >
                   {s.label}
-                </div>
+                </motion.div>
               ))}
             </div>
           </div>
         </Reveal>
 
         <Reveal delay={0.15}>
-          <div className="relative h-[380px] overflow-hidden rounded-[28px] bg-gradient-to-br from-[#c9743b] to-[#f0b27a] shadow-[0_25px_50px_-15px_rgba(23,20,15,0.3)]" />
+          <div ref={imgWrapRef} className="h-[380px] overflow-hidden rounded-[28px] shadow-[0_25px_50px_-15px_rgba(23,20,15,0.3)]">
+            <motion.div
+              style={{ y: imageY }}
+              className="h-[120%] w-full bg-gradient-to-br from-[#c9743b] to-[#f0b27a]"
+            />
+          </div>
         </Reveal>
       </div>
     </section>

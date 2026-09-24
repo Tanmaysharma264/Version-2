@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 @theme {
-  --font-display: "Fraunces", "Georgia", serif;
-  --font-sans: "Inter", system-ui, sans-serif;
+  --font-display: "Playfair Display", "Georgia", serif;
+  --font-sans: "Manrope", system-ui, sans-serif;
 
   --color-cream: #faf7f0;
   --color-cream-dim: #f1ecdf;
