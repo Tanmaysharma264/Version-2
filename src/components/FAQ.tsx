@@ -1,16 +1,16 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { faqs } from "../data/content";
-import Reveal from "./Reveal";
+import WipeText from "./WipeText";
 
 export default function FAQ() {
   const [open, setOpen] = useState(0);
 
   return (
     <section className="px-6 py-20">
-      <Reveal className="text-center">
+      <WipeText className="text-center">
         <p className="font-display text-2xl text-ink-soft">Frequently Asked Questions</p>
-      </Reveal>
+      </WipeText>
 
       <div className="mx-auto mt-10 flex max-w-2xl flex-col divide-y divide-line rounded-3xl border border-line bg-white/60">
         {faqs.map((f, i) => {

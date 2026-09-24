@@ -2,6 +2,8 @@ import { motion, useMotionValue, useTransform, useSpring } from "framer-motion";
 import type { MouseEvent } from "react";
 import { projects } from "../data/content";
 import Reveal from "./Reveal";
+import WipeText from "./WipeText";
+import Parallax from "./Parallax";
 
 function ProjectCard({ p }: { p: (typeof projects)[number] }) {
   const mx = useMotionValue(0.5);
@@ -64,14 +66,16 @@ function ProjectCard({ p }: { p: (typeof projects)[number] }) {
 export default function Projects() {
   return (
     <section id="projects" className="px-6 py-20">
-      <Reveal className="text-center">
+      <WipeText className="text-center">
         <p className="font-display text-2xl text-ink-soft">Projects</p>
-      </Reveal>
+      </WipeText>
 
       <div className="mx-auto mt-10 grid max-w-4xl grid-cols-1 gap-5 sm:grid-cols-2">
         {projects.map((p, i) => (
           <Reveal key={p.title} delay={i * 0.08}>
-            <ProjectCard p={p} />
+            <Parallax axis="y" distance={i % 2 === 0 ? -22 : 22}>
+              <ProjectCard p={p} />
+            </Parallax>
           </Reveal>
         ))}
       </div>

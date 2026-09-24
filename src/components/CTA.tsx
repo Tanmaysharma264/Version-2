@@ -1,6 +1,7 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import Reveal from "./Reveal";
+import WipeText from "./WipeText";
 
 export default function CTA() {
   const ref = useRef<HTMLElement>(null);
@@ -23,10 +24,12 @@ export default function CTA() {
         style={{ x: cloud2X }}
         className="pointer-events-none absolute right-[8%] top-[55%] h-20 w-32 rounded-full bg-white/50 blur-xl"
       />
-      <Reveal>
-        <h2 className="font-display mx-auto max-w-2xl text-[clamp(1.8rem,4.5vw,3rem)] leading-[1.1] text-ink">
+      <WipeText className="mx-auto max-w-2xl">
+        <h2 className="font-display text-[clamp(1.8rem,4.5vw,3rem)] leading-[1.1] text-ink">
           Let's give your website a professional look
         </h2>
+      </WipeText>
+      <Reveal delay={0.15}>
         <div className="mt-8 flex items-center justify-center gap-3">
           <motion.a
             href="#contact"
